@@ -33,6 +33,12 @@ module Scaffold
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
 
+    config.generators do |g|
+      g.test_framework :rspec, :view_specs => false, :helper_specs => false,
+                       :routing_specs => false, :request_specs => false
+      g.fixture_replacement :factory_girl, :dir => "spec/factories"
+    end
+
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
