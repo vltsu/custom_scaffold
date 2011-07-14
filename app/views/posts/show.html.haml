@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Post:
+  = @post.post
+
+= link_to 'Редактировать', edit_post_path(@post)
+\|
+= link_to 'Назад', posts_path

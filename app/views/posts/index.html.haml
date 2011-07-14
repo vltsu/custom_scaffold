@@ -1,0 +1,23 @@
+%h1 Список posts
+
+%table
+  %tr
+    %th Post
+    %th
+    %th
+    %th
+
+  - @posts.each do |post|
+    %tr
+      %td= post.post
+      %td= link_to 'Открыть', post
+      %td= link_to 'Редактировать', edit_post_path(post)
+      %td= link_to 'Удалить', post, :confirm => 'Вы уверены?', :method => :delete
+
+%br
+
+= link_to 'Создать Post', new_post_path
+
+%br
+%div{ :style => 'width: 10%; margin: 0px auto;' }
+  = will_paginate(@post, :previous_label => '&#8592;', :next_label => '&#8594;')
