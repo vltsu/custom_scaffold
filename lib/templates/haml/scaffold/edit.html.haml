@@ -1,0 +1,8 @@
+%h1 Редактирование <%= singular_table_name %>
+
+= render 'form'
+
+= link_to 'Открыть', @<%= singular_table_name %>
+\|
+= link_to 'Назад', <%= index_helper %>_path
+

@@ -1,0 +1,28 @@
+%h1 Список <%= plural_table_name %>
+
+%table
+  %tr
+<% for attribute in attributes -%>
+    %th <%= attribute.human_name %>
+<% end -%>
+    %th
+    %th
+    %th
+
+  - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
+    %tr
+<% for attribute in attributes -%>
+      %td= <%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
+      %td= link_to 'Show', <%= singular_table_name %>
+      %td= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
+      %td= link_to 'Destroy', <%= singular_table_name %>, :confirm => 'Вы уверены?', :method => :delete
+
+%br
+
+= link_to 'Создать <%= human_name %>', new_<%= singular_table_name %>_path
+
+%br
+%div{ :style => 'width: 10%; margin: 0px auto;' }
+  = will_paginate(@<%= singular_table_name %>, :previous_label => '&#8592;', :next_label => '&#8594;')
+

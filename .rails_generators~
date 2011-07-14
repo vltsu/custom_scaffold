@@ -1,0 +1,184 @@
+---
+rspec:install:
+- --force
+- --pretend
+- --quiet
+- --skip
+authlogic:session:
+- --fixture
+- --fixture-replacement=
+- --force
+- --pretend
+- --quiet
+- --skip
+- --test-framework=
+mongo_mapper:install:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --host=
+mustache:install:
+- --force
+- --pretend
+- --quiet
+- --skip
+koala:install:
+- --force
+- --pretend
+- --quiet
+- --skip
+controller:
+- --controller-specs
+- --view-specs
+- --force
+- --pretend
+- --quiet
+- --skip
+- --template-engine=
+- --test-framework=
+- --helper
+model:
+- --migration
+- --timestamps
+- --parent=
+- --test-framework=
+- --fixture
+- --fixture-replacement=
+- --force
+- --pretend
+- --quiet
+- --skip
+- --orm=
+stylesheets:
+- --force
+- --pretend
+- --quiet
+- --skip
+resource:
+- --migration
+- --timestamps
+- --parent=
+- --test-framework=
+- --fixture
+- --fixture-replacement=
+- --controller-specs
+- --view-specs
+- --template-engine=
+- --helper
+- --force
+- --pretend
+- --quiet
+- --skip
+- --orm=
+- --force-plural
+- --resource-controller=
+- --actions=
+scaffold:
+- --migration
+- --timestamps
+- --parent=
+- --test-framework=
+- --fixture
+- --fixture-replacement=
+- --singleton
+- --controller-specs
+- --view-specs
+- --webrat
+- --webrat-matchers
+- --helper-specs
+- --routing-specs
+- --integration-tool=
+- --template-engine=
+- --helper
+- --form-builder=
+- --force
+- --pretend
+- --quiet
+- --skip
+- --orm=
+- --force-plural
+- --scaffold-controller=
+- --stylesheets
+helper:
+- --helper-specs
+- --force
+- --pretend
+- --quiet
+- --skip
+- --test-framework=
+scaffold_controller:
+- --form-builder=
+- --singleton
+- --controller-specs
+- --view-specs
+- --webrat
+- --webrat-matchers
+- --helper-specs
+- --routing-specs
+- --integration-tool=
+- --request-specs
+- --force
+- --pretend
+- --quiet
+- --skip
+- --force-plural
+- --orm=
+- --template-engine=
+- --test-framework=
+- --helper
+integration_test:
+- --request-specs
+- --webrat
+- --webrat-matchers
+- --force
+- --pretend
+- --quiet
+- --skip
+- --integration-tool=
+session_migration:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --orm=
+generator:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --namespace
+migration:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --orm=
+performance_test:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --performance-tool=
+plugin:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --tasks=
+- --generator
+- --test-framework=
+observer:
+- --test-framework=
+- --force
+- --pretend
+- --quiet
+- --skip
+- --orm=
+mailer:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --template-engine=
+- --test-framework=
