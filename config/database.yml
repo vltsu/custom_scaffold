@@ -1,22 +1,22 @@
 development:
     adapter: mysql2
-    database: transunion_rails
+    database: test
     encoding: utf8
-    username: rails
-    password: rails
+    username: test
+    password: test
     host: localhost
 
 test: #&test
     adapter: mysql2
-    database: transunion_rails_test
+    database: test_test
     encoding: utf8
-    username: rails
-    password: rails
+    username: test
+    password: test
     host: localhost
 
 production:
     adapter: mysql
-    database: firstrails
+    database: test
     encoding: utf8
     username: rails
     password: rails

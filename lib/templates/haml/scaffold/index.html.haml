@@ -14,9 +14,9 @@
 <% for attribute in attributes -%>
       %td= <%= singular_table_name %>.<%= attribute.name %>
 <% end -%>
-      %td= link_to 'Show', <%= singular_table_name %>
-      %td= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
-      %td= link_to 'Destroy', <%= singular_table_name %>, :confirm => 'Вы уверены?', :method => :delete
+      %td= link_to 'Открыть', <%= singular_table_name %>
+      %td= link_to 'Редактировать', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
+      %td= link_to 'Удалить', <%= singular_table_name %>, :confirm => 'Вы уверены?', :method => :delete
 
 %br
 
@@ -25,4 +25,3 @@
 %br
 %div{ :style => 'width: 10%; margin: 0px auto;' }
   = will_paginate(@<%= singular_table_name %>, :previous_label => '&#8592;', :next_label => '&#8594;')
-

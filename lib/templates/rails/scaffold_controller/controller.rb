@@ -25,7 +25,7 @@ class <%= controller_class_name %>Controller < ApplicationController
     @<%= singular_table_name %> = <%= orm_class.build(class_name, "params[:#{singular_table_name}]") %>
 
     if @<%= orm_instance.save %>
-      redirect_to ({:action => 'index'}, {:notice => '<%= human_name %> добавлен'})
+      redirect_to({:action => 'index'}, {:notice => '<%= human_name %> добавлен'})
     else
       render :action, '"new"'
     end
