@@ -1,5 +1,4 @@
 # encoding: UTF-8
-<% module_namespacing do -%>
 class <%= controller_class_name %>Controller < ApplicationController
   # GET <%= route_url %>
   def index
@@ -25,12 +24,10 @@ class <%= controller_class_name %>Controller < ApplicationController
   def create
     @<%= singular_table_name %> = <%= orm_class.build(class_name, "params[:#{singular_table_name}]") %>
 
-    respond_to do |format|
-      if @<%= orm_instance.save %>
-        format.html { redirect_to @<%= singular_table_name %>, <%= key_value :notice, "'#{human_name} создан.'" %> }
-      else
-        format.html { render <%= key_value :action, '"new"' %> }
-      end
+    if @<%= orm_instance.save %>
+      redirect_to ({:action => 'index'}, {:notice => '<%= human_name %> добавлен'})
+    else
+      render :action, '"new"'
     end
   end
 
@@ -38,12 +35,10 @@ class <%= controller_class_name %>Controller < ApplicationController
   def update
     @<%= singular_table_name %> = <%= orm_class.find(class_name, "params[:id]") %>
 
-    respond_to do |format|
-      if @<%= orm_instance.update_attributes("params[:#{singular_table_name}]") %>
-        format.html { redirect_to @<%= singular_table_name %>, <%= key_value :notice, "'#{human_name} изменен.'" %> }
-      else
-        format.html { render <%= key_value :action, '"edit"' %> }
-      end
+    if @<%= orm_instance.update_attributes("params[:#{singular_table_name}]") %>
+      redirect_to(@<%= singular_table_name %>, :notice => 'Изменения внесены')
+    else
+      render :action, '"edit"'
     end
   end
 
@@ -52,9 +47,6 @@ class <%= controller_class_name %>Controller < ApplicationController
     @<%= singular_table_name %> = <%= orm_class.find(class_name, "params[:id]") %>
     @<%= orm_instance.destroy %>
 
-    respond_to do |format|
-      format.html { redirect_to <%= index_helper %>_url }
-    end
+    redirect_to (<%= index_helper %>_url)
   end
 end
-<% end -%>

@@ -7,6 +7,7 @@ rspec:install:
 authlogic:session:
 - --fixture
 - --fixture-replacement=
+- --dir=
 - --force
 - --pretend
 - --quiet
